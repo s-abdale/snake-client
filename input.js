@@ -1,5 +1,3 @@
-// const connect = require("./client");
-
 let connection;
 
 const setupInput = function (conn) {
@@ -13,11 +11,11 @@ const setupInput = function (conn) {
 };
 
 const handleUserInput = function (key) {
-  // let delay = 0;
 
   if (key === '\u0003') {
-    // \u0003 = ctrl+c. if user inputs ctrl+c, exit the game
+    // \u0003 = ctrl+c
     console.log(`GOODBYE`)
+    // if ctrl+c, exit the game
     process.exit();
   } else if (key === "w") {
     connection.write(`Move: up`);
@@ -32,15 +30,18 @@ const handleUserInput = function (key) {
     connection.write(`Move: right`);
     console.log(`Moved right`);
   } else if (key === "1") {
+    // chat key - greeting
     connection.write(`Say: Hello!`);
     console.log(`Sent: hello!`);
   } else if (key === "2") {
+    // chat key - comment
     connection.write(`Say: Nice move!`);
     console.log(`Sent: nice move!`);
   } else if (key === "0") {
+    // chat key - sign off
     connection.write(`Say: C U L8R`);
-  } else {
     console.log(`Sent: c u l8r`);
+  } else {
     console.log(`ERROR: incorrect input, try again!`)
   };
 };
