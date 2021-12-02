@@ -31,7 +31,16 @@ const handleUserInput = function (key) {
   } else if (key === "d") {
     connection.write(`Move: right`);
     console.log(`Moved right`);
+  } else if (key === "1") {
+    connection.write(`Say: Hello!`);
+    console.log(`Sent: hello!`);
+  } else if (key === "2") {
+    connection.write(`Say: Nice move!`);
+    console.log(`Sent: nice move!`);
+  } else if (key === "0") {
+    connection.write(`Say: C U L8R`);
   } else {
+    console.log(`Sent: c u l8r`);
     console.log(`ERROR: incorrect input, try again!`)
   };
 };
